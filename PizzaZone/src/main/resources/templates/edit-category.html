@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Edit Category</title>
+	<link rel="stylesheet" th:href="@{/css/project.css}">
+	<script th:src="@{/js/edit-category.js}"></script>
+</head>
+
+<body>
+
+	<img src="images/burgershop.webp"
+		style="position: absolute; width: 1440px; height: 700px; left: 0px; top: 0px; filter: blur(5px);">
+
+	<div class="container">
+		<div class="edit-category-box">
+			<h2>Edit Category</h2>
+			<form id="edit-category-form" th:action="@{/editC/{id}(id=${category.id})}" method="post">
+				<div class="textbox">
+					<label for="name">Category Name</label>
+					<input type="text" id="name" name="name" th:value="${category.name}"
+						placeholder="Enter category name" required>
+				</div>
+				<div class="textbox">
+					<label for="status">Status</label>
+					<select id="status" name="status" required>
+						<option th:value="Active" th:selected="${category.status == 'Active'}">Active</option>
+						<option th:value="Inactive" th:selected="${category.status == 'Inactive'}">Inactive</option>
+					</select>
+				</div>
+				<button type="submit" class="btn">Update</button>
+			</form>
+		</div>
+	</div>
+
+</body>
+
+</html>

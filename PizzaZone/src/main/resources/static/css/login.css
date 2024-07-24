@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+.form-container {
+	position: absolute;
+	width: 350px;
+	height: 420px;
+	top: 150px;
+	left: 550px;
+	background-color: white;
+}
+
+.textbox1 {
+	margin-bottom: 20px;
+}
+
+.textbox2 {
+	margin-bottom: 20px;
+}
+
+.textbox1 label {
+	position: absolute;
+	top: 85px;
+	left: 30px;
+	display: block;
+	margin-bottom: 5px;
+	color: #333;
+	font-weight: bold;
+}
+
+.textbox2 label {
+	position: absolute;
+	top: 165px;
+	left: 30px;
+	display: block;
+	margin-bottom: 5px;
+	color: #333;
+	font-weight: bold;
+}
+
+.textbox1 input {
+	width: 80%;
+	padding: 10px;
+	position: absolute;
+	top: 110px;
+	left: 30px;
+	background: #f2f2f2;
+	border: none;
+	outline: none;
+	color: #333;
+	font-size: 16px;
+	border-radius: 5px;
+}
+
+.textbox2 input {
+	width: 80%;
+	padding: 10px;
+	position: absolute;
+	top: 190px;
+	left: 30px;
+	background: #f2f2f2;
+	border: none;
+	outline: none;
+	color: #333;
+	font-size: 16px;
+	border-radius: 5px;
+}
+
+.textbox input:focus {
+	background: #e0e0e0;
+}
+
+.btn {
+	width: 80%;
+	background: green;
+	position: absolute;
+	top: 300px;
+	left: 35px;
+	border: none;
+	padding: 15px;
+	cursor: pointer;
+	font-size: 16px;
+	color: #fff;
+	border-radius: 5px;
+	transition: background 0.3s;
+}
+
+.btn:hover {
+	background: #555;
+}
+
+.pass {
+	margin: -5px 0 20px 5px;
+	color: #2691d9;
+	cursor: pointer;
+	position: absolute;
+	top: 265px;
+	left: 110px;
+	text-decoration: none;
+
+}
+
+.pass:hover {
+	text-decoration: underline;
+}

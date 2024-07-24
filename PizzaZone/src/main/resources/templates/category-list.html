@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Category List</title>
+	<link rel="stylesheet" th:href="@{/css/project.css}">
+	<script th:src="@{/js/category-list.js}"></script>
+</head>
+
+<body>
+
+	<img src="images/burgershop.webp"
+		style="position: absolute; width: 1440px; height: 700px; left: 0px; top: 0px; filter: blur(5px);">
+
+	<div class="container">
+
+		<h2 class="head1">Category List</h2>
+
+		<a th:href="@{/add-category}" class="btnadd">Add Category</a>
+
+		<table>
+
+			<thead>
+				<tr>
+					<th>Sr No</th>
+					<th>Category Name</th>
+					<th>Status</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="category, status : ${categories}">
+					<td th:text="${status.index + 1}"></td>
+					<td th:text="${category.name}"></td>
+					<td th:text="${category.status}"></td>
+					<td>
+						<a th:href="@{edit-category/{id}(id=${category.id})}" class="btn edit-btn">Edit</a>
+						<a th:href="@{/deleteC/{id}(id=${category.id})}" class="btn delete-btn">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+
+		</table>
+
+	</div>
+
+</body>
+
+</html>

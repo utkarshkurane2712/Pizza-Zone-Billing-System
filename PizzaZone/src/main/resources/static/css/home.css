@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+home.css
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%; 
+}
+
+.sidebar {
+    width: 15%;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+.sidebar nav ul li a:hover {
+    color: #007bff;
+}
+
+.main-content {
+    width: 55%;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    height: 100vh;
+}
+
+.search-container {
+    margin-bottom: 20px;
+}
+
+#search-bar {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+    height: 80%;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+	margin-left:5%;
+	margin-top:5%;
+    width: 90%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-info h5 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.product-info p {
+    margin: 0;
+    font-size: 16px;
+    color: #007bff;
+}
+
+.billing-section {
+    width: 30%;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.username-container {
+    margin-bottom: 20px;
+}
+
+.username-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.username-container input {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.billing-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left: -8px;
+}
+
+.billing-section table th,
+.billing-section table td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    text-align: left;
+}
+
+.billing-section table th {
+    background-color: #f1f1f1;
+}
+
+#total-amount-container {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+} 
+
+
+
+

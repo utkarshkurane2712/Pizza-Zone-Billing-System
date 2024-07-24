@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+
+<body>
+    <div class="container">
+    
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a th:href="@{/home}">All Products</a></li>
+                    <li><a th:href="@{/category-list}">Category</a></li>
+                    <li><a th:href="@{/product-list}">Product</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Search products...">
+            </div>
+            <div class="products-grid" id="products-grid">
+                <div class="product-card" th:each="product : ${products}" th:data-id="${product.id}">
+                    <img th:src="${product.image}" alt="Product Image">
+                    <div class="product-info">
+                        <h5 th:text="${product.name}"></h5>
+                        <p><span th:text="${product.price}"></span> Rs.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="billing-section">
+            <div class="username-container">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Enter your username">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Discounted Price (20%)</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody id="billing-items"></tbody>
+            </table>
+            <div id="total-amount-container">
+                <strong>Total Amount: Rs.<span id="total-amount">0.00</span></strong>    
+            </div>
+        </aside>
+        
+    </div>
+
+    <script th:src="@{/js/home.js}"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Add Category</title>
+	<link rel="stylesheet" th:href="@{/css/project.css}">
+	<script th:src="@{/js/add-category.js}"></script>
+</head>
+
+<body>
+
+	<img src="images/burgershop.webp"
+		style="position: absolute; width: 1440px; height: 700px; left: 0px; top: 0px; filter: blur(5px);">
+
+	<div class="container">
+
+		<div class="add-category-box">
+
+			<h2 class="head1">Add Category</h2>
+
+			<form id="add-category-form" th:action="@{/addC}" method="post">
+
+				<div class="textbox">
+					<label for="name">Category Name</label>
+					<input type="text" id="name" name="name" placeholder="Enter category name" required>
+				</div>
+
+				<div class="textbox">
+					<label for="status">Status</label>
+					<select id="status" name="status" required>
+						<option value="Active">Active</option>
+						<option value="Inactive">Inactive</option>
+					</select>
+				</div>
+
+				<button type="submit" class="btn">Add</button>
+
+			</form>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>

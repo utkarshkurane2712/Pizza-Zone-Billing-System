@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Product List</title>
+	<link rel="stylesheet" th:href="@{/css/project.css}">
+</head>
+
+<body>
+
+	<img src="images/burgershop.webp"
+		style="position: absolute; width: 1440px; height: 700px; left: 0px; top: 0px; filter: blur(5px);">
+
+	<div class="container">
+		<h2 class="head1">Product List</h2>
+		<a th:href="@{/add-product}" class="btnadd">Add Product</a>
+		<table>
+			<thead>
+				<tr>
+					<th>Sr No</th>
+					<th>Product Name</th>
+					<th>Price</th>
+					<th>Image</th>
+					<th>Category</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="product, status : ${products}">
+					<td th:text="${status.index + 1}"></td>
+					<td th:text="${product.name}"></td>
+					<td th:text="${product.price}"></td>
+					<td><img th:src="${product.image}" width="50" height="50"></td>
+					<td th:text="${product.category.name}"></td>
+					<td>
+						<a th:href="@{edit-product/{id}(id=${product.id})}" class="btn edit-btn">Edit</a>
+						<a th:href="@{/deleteP/{id}(id=${product.id})}" class="btn delete-btn">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<script th:src="@{/js/product-list.js}"></script>
+
+</body>
+
+</html>

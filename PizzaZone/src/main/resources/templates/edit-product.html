@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Edit Product</title>
+	<link rel="stylesheet" th:href="@{/css/project.css}">
+	<script th:src="@{/js/edit-product.js}"></script>
+</head>
+
+<body>
+
+	<img src="images/burgershop.webp"
+		style="position: absolute; width: 1440px; height: 700px; left: 0px; top: 0px; filter: blur(5px);">
+
+	<div class="container">
+
+		<div class="edit-product-box">
+
+			<h2>Edit Product</h2>
+
+			<form id="edit-product-form" th:action="@{/editP/{id}(id=${product.id})}" method="post">
+
+				<div class="textbox">
+					<label for="name">Product Name</label>
+					<input type="text" id="name" name="name" th:value="${product.name}" placeholder="Enter product name"
+						required>
+				</div>
+
+				<div class="textbox">
+					<label for="price">Product Price</label>
+					<input type="number" id="price" name="price" th:value="${product.price}"
+						placeholder="Enter product price" required>
+				</div>
+
+				<div class="textbox">
+					<label for="image">Product Image URL</label>
+					<input type="url" id="image" name="image" th:value="${product.image}"
+						placeholder="Enter product image URL">
+				</div>
+
+				<div class="textbox">
+					<label for="category">Product Category</label>
+					<select id="category" name="category.id" required>
+						<option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"
+							th:selected="${category.id == product.category.id}"></option>
+					</select>
+				</div>
+
+				<button type="submit" class="btn">Update</button>
+
+			</form>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>
